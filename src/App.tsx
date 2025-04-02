@@ -10,6 +10,7 @@ function App() {
           { text: "About", path: "about" },
         ]}
       />
+      <p>testes</p>
     </BrowserRouter>
   );
 }
