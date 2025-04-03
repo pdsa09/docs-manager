@@ -6,10 +6,6 @@ export const SidebarContainer = styled.div`
   height: 100vh;
   background-color: #f5f5f5;
   padding: 20px;
-  overflow-y: auto;
-  position: fixed;
-  left: 0;
-  top: 0;
 `;
 
 export const NavList = styled.ul`
