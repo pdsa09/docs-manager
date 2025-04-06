@@ -1,7 +1,15 @@
 import * as S from "./styles";
-const MarkdownRenderer = () => {
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+interface MarkdownRendererProps {
+  text: string;
+}
+
+const MarkdownRenderer = ({ text }: MarkdownRendererProps) => {
   return (
-    <S.MarkdownRendererContainer>MarkdownRenderer</S.MarkdownRendererContainer>
+    <S.MarkdownRendererContainer>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+    </S.MarkdownRendererContainer>
   );
 };
 

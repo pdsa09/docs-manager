@@ -1,25 +1,22 @@
 import * as S from "./styles";
 
 interface SidebarProps {
-  menuItems: { text: string; path: string }[];
+  menuItems: { title: string; subItem: { text: string; path: string }[] }[];
 }
 
 const Sidebar = ({ menuItems }: SidebarProps) => {
   return (
     <S.SidebarContainer>
-      <h2>Documentation</h2>
-      <S.NavList>
-        {menuItems.map((item, index) => (
-          <S.NavItem key={index}>
-            <S.NavLink
-              to={`/docs/${item.path}`}
-              active={location.pathname === `/docs/${item.path}`}
-            >
-              {item.text}
-            </S.NavLink>
-          </S.NavItem>
-        ))}
-      </S.NavList>
+      {menuItems.map((item, index) => (
+        <S.NavList key={index}>
+          <p>{item.title}</p>
+          {item.subItem.map((subItem, subIndex) => (
+            <S.NavItem key={`${index}-${subIndex}`}>
+              <S.NavLink to={`/docs/${subItem.path}`}>{subItem.text}</S.NavLink>
+            </S.NavItem>
+          ))}
+        </S.NavList>
+      ))}
     </S.SidebarContainer>
   );
 };
