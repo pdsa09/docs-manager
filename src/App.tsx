@@ -11,6 +11,7 @@ import DocumentView from "./views/Documents";
 import AdminView from "./views/Admin";
 import { HeaderItems, sidebarList } from "./utils/utils";
 import Header from "./components/Header";
+import { useState } from "react";
 
 const AppContainer = styled.div`
   display: flex;
@@ -20,10 +21,15 @@ const AppContainer = styled.div`
 `;
 
 const App: React.FC = () => {
+  const [isLogged, setIsLogged] = useState(false);
   return (
     <DocumentsProvider>
       <Router>
-        <Header item={HeaderItems} />
+        <Header
+          item={HeaderItems}
+          isLogged={isLogged}
+          setIsLogged={setIsLogged}
+        />
         <AppContainer>
           <Sidebar menuItems={sidebarList} />
           <Routes>

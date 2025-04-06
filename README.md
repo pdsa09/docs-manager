@@ -26,8 +26,6 @@
    npm install
    ```
 
-4. 🔧 Por se tratar de API pública, foi disponibilizado neste repositório o arquivo .env completo.
-
 ## 🚀 Executando o Projeto
 
 1. 🏃‍♂️ Inicie o servidor de desenvolvimento
@@ -43,4 +41,9 @@
 
 ## 📄 Sobre
 
-O Docs Manager é uma aplicação de gerenciamento de documentos que auxilia os usuários a visualizar e editar localmente documentos importantes.
+O Docs Manager é uma aplicação de gerenciamento de documentos que auxilia os usuários a visualizar e editar localmente documentos técnicos.
+
+## 📄 Considerações Importantes
+
+- Por se tratar de uma API Pública, o arquivo .env foi disponibilizado no repositório.
+- A Sessão Simulada de Administração ficará acessível ao clicar no botão de Sign In.

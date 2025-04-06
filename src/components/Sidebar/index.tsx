@@ -1,7 +1,10 @@
 import * as S from "./styles";
 
 interface SidebarProps {
-  menuItems: { title: string; subItem: { text: string; path: string }[] }[];
+  menuItems: {
+    title: string;
+    subItem: { text: string; path: string }[];
+  }[];
 }
 
 const Sidebar = ({ menuItems }: SidebarProps) => {

@@ -84,7 +84,8 @@ export const HeaderItems = [
     href: "/",
   },
   {
-    name: "Mudanças",
+    name: "Modificações",
     href: "/admin",
+    isLogged: true,
   },
 ];

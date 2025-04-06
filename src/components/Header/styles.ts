@@ -35,7 +35,7 @@ export const UserSection = styled.div`
   align-items: center;
   align-self: end;
   gap: 0.5rem;
-  cursor: not-allowed;
+  cursor: pointer;
 `;
 
 export const UserIcon = styled(FaUser)`

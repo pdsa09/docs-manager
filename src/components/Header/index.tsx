@@ -1,28 +1,39 @@
 import * as S from "./styles";
+import { Dispatch } from "react";
 
 interface ItemsProps {
   name: string;
   href: string;
+  isLogged?: boolean;
 }
 
 interface HeaderProps {
   item: ItemsProps[];
+  isLogged: boolean;
+  setIsLogged: Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Header = ({ item }: HeaderProps) => {
+const Header = ({ item, isLogged, setIsLogged }: HeaderProps) => {
   return (
     <S.HeaderContainer>
       <S.NavContainer>
-        {item.map((i) => (
-          <S.NavItem key={i.name} href={i.href}>
-            {i.name}
-          </S.NavItem>
-        ))}
+        {item
+          .filter((i) => !i.isLogged || (i.isLogged && isLogged))
+          .map((i) => (
+            <S.NavItem key={i.name} href={i.href}>
+              {i.name}
+            </S.NavItem>
+          ))}
       </S.NavContainer>
 
-      <S.UserSection>
+      <S.UserSection
+        onClick={() => {
+          //Simulado
+          setIsLogged(!isLogged);
+        }}
+      >
         <S.UserIcon />
-        <S.UserName title="Em manutenção">Sign in</S.UserName>
+        <S.UserName>{isLogged ? "Sign out" : "Sign in"}</S.UserName>
       </S.UserSection>
     </S.HeaderContainer>
   );
